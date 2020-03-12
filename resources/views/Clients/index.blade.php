@@ -4,25 +4,35 @@
 
 @endpush
 @section('conteudo')
-    <div style="border:groove; padding:20px; border-color:#2dce89;">
-        <form action="/action_page.php">
-        <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" class="form-control" placeholder="Digite seu nome" id="nome">
-        </div>
-        <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" placeholder="Digite seu cpf" id="cpf" maxlength="14" onkeypress="$(this).mask('000.000.000-00');">
-        </div>
-        <div class="form-group">
-            <label for="end">Endereço:</label>
-            <input type="text" class="form-control" placeholder="Digite seu endereço" id="end">
-        </div>
-        <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-success" style="">Enviar</button>
-        </div>
-        </form>
-    </div>
+
+<a href="https://www.google.com/" type="button" class="btn btn-outline-dark btn-lg btn-block">Adicionar</a>
+<br>
+<table class="table table-striped" style="text-align: center;">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($clients as $client)
+    <tr>
+      <th scope="row">{{$client->id}}</th>
+      <td>{{$client->cpf}}</td>
+      <td>{{$client->name}}</td>
+      <td>{{$client->name}}</td>
+        <td>
+        <a href=""  type="button" class="btn btn-outline-success">Editar</a>
+        <a href=""  type="button" class="btn btn-outline-danger">Excluir</a>
+        </td>
+    </tr>
+    @endforeach
+
+  </tbody>
+</table>
 @endsection
 
 @push('scripts')
