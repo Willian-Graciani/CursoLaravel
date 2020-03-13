@@ -3,9 +3,11 @@
 @push('css')
 
 @endpush
+
 @section('conteudo')
 
-<a href="https://www.google.com/" type="button" class="btn btn-outline-dark btn-lg btn-block">Adicionar</a>
+
+<a href="{{route('client.create')}}" type="button" class="btn btn-outline-dark btn-lg btn-block">Adicionar</a>
 <br>
 <table class="table table-striped" style="text-align: center;">
   <thead>
