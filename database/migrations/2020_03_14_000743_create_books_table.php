@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientTable extends Migration
+class CreateBooksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateClientTable extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table) {
-            $table->unsignedBigInteger('id',true);///true - incremental
+        Schema::create('books', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('cpf');
-            $table->string('email');
-            $table->boolean('active_flag')->default(true);
-            $table->string('endereco')->nullable();
+            $table->string('writer');
+            $table->bigInteger('page_number')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateClientTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('books');
     }
 }
